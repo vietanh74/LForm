@@ -1,25 +1,21 @@
 <div class="form-group @if (isset($errors) && $errors->has($name)) has-error @endif">
 	<?php
-    	$attrs = array('class' => 'form-control');
-		if (isset($placeholder))
+    	$attrs = array('class' => 'fundstart-material-input');
+		if (isset($place_holder))
 		{
-			$attrs['placeholder'] = $placeholder;
-		}
-		if (isset($validation))
-		{
-			$attrs = array_merge($attrs, $validation);
+			$attrs['placeholder'] = $place_holder;
 		}
 		if (isset($attribute))
 		{
 			$attrs = array_merge($attrs, $attribute);
 		}
     ?>
-    @if (isset($title))
-		{{ Form::label($name, $title, array('class' => 'control-label')) }}
-	@endif
-	{{ Form::textarea($name, $value, $attrs) }}
+    @if (isset($title) && (strlen($title) > 0))
+    	{{ Form::label($name, $title, array('class' => 'control-label')) }}
+    @endif
+    {{ Form::text($name, $value, $attrs) }}
 
-    @if (isset($hin))
+    @if (isset($hin) && (strlen($hin) > 0))
 	    <div class="note">
 	        {{ $hin }}
 	    </div>

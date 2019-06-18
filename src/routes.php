@@ -1,9 +1,9 @@
 <?php
 
 Route::group(["middleware" => ["web"]], function() {
-	Route::get('setLang/{lang}', 'libressltd\lbform\controllers\LBFormController@getSetLang');
+	Route::get('setLang/{lang}', 'vietanh\lform\controllers\LFormController@getSetLang');
 });
 
-Route::group(["middleware" => ["web", "auth"], 'prefix' => 'lbform', 'namespace' => 'libressltd\lbform\controllers'], function(){
-	Route::get('logout', "LBFormController@logout");
+Route::group(["middleware" => ["web", "auth"], 'prefix' => 'lbform', 'namespace' => 'vietanh\lform\controllers'], function(){
+	Route::get('logout', "LFormController@logout");
 });

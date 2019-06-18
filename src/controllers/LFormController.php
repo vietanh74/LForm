@@ -1,13 +1,13 @@
 <?php
 
-namespace LIBRESSLtd\LBForm\Controllers;
+namespace VietAnh\LForm\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Cookie;
 use Auth;
 
-class LBFormController extends Controller
+class LFormController extends Controller
 {
     /**
      * Create a new controller instance.

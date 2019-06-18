@@ -1,6 +1,6 @@
 <?php
 
-namespace LIBRESSLtd\LBForm;
+namespace VietAnh\LForm;
 
 use Illuminate\Contracts\Encryption\DecryptException;
 use Illuminate\Support\Facades\Crypt;
@@ -8,7 +8,7 @@ use Illuminate\Support\ServiceProvider;
 use Form;
 use Cookie;
 
-class LBFormServiceProvider extends ServiceProvider
+class LFormServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap the application services.
@@ -17,11 +17,16 @@ class LBFormServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__.'/views', 'lbform');
+        $this->loadViewsFrom(__DIR__.'/views', 'lform');
         $this->publishes([
             __DIR__.'/views' => base_path('resources/views/layouts/form'),
             __DIR__.'/config' => base_path('config'),
-        ], "lbform");
+        ], "lform");
+        
+        Form::component('lbButtonTable', 'layouts.form.bsbuttontable', ['url', 'method', 'title', 'attribute']);
+        Form::component('materialText', 'layouts.form.materialtext', ['name', 'value', 'title', 'place_holder', 'hin', 'validation', 'attribute']);
+        Form::component('materialPassword', 'layouts.form.materialpassword', ['name', 'title', 'forgot', 'place_holder', 'hin', 'validation', 'attribute']);
+
         
         Form::component('lbText', 'layouts.form.bstext', ['name', 'value', 'title', 'place_holder', 'hin', 'validation', 'attribute']);
         Form::component('lbNumber', 'layouts.form.bsnumber', ['name', 'value', 'title', 'min', 'max', 'attribute']);
@@ -62,6 +67,6 @@ class LBFormServiceProvider extends ServiceProvider
     public function register()
     {
         include __DIR__.'/routes.php';
-        $this->app->make('LIBRESSLtd\LBForm\Controllers\LBFormController');
+        $this->app->make('VietAnh\LForm\Controllers\LFormController');
     }
 }

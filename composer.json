@@ -14,7 +14,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Vietanh\\LForm\\": "src/"
+            "VietAnh\\LForm\\": "src/"
         },
         "classmap": ["src/controllers", "src/traits"]
     },
