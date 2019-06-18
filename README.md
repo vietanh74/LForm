@@ -6,7 +6,7 @@ This is a form element pre-written with adminlte library of acacha.
 ### Step 1: install
 
 ```php
-composer require libressltd/lbform
+composer require vietanh/lform
 ```
 
 ### Step 2: add service provider
@@ -14,27 +14,17 @@ composer require libressltd/lbform
 In config/app.php, add following line to provider
 
 ```php
-LIBRESSLtd\LBForm\LBFormServiceProvider::class,
+VietAnh\LForm\LFormServiceProvider::class
 ```
 
 ### Step 3: Publish 
 
 ```php
-php artisan vendor:publish --tag=lbform
+php artisan vendor:publish --tag=lform
 ```
 
 ### Step 4: Using:
 
 ```php
 {!! Form::lbText("text-input-name", "value in text input name", "Label of text input") !!}
-```
-
-### Optional: Using datatable trait
-
-```php
-
-use LIBRESSLtd\LBForm\Traits\LBDatatableTrait;
-
-use LBDatatableTrait;
-
 ```
