@@ -16,7 +16,7 @@
         "psr-4": {
             "VietAnh\\LForm\\": "src/"
         },
-        "classmap": ["src/controllers", "src/traits"]
+        "classmap": ["src/controllers"]
     },
     "minimum-stability": "stable"
 }
