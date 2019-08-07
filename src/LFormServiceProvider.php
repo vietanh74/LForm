@@ -20,7 +20,6 @@ class LFormServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/views', 'lform');
         $this->publishes([
             __DIR__.'/views' => base_path('resources/views/layouts/form'),
-            __DIR__.'/config' => base_path('config'),
         ], "lform");
         
         Form::component('lbButtonTable', 'layouts.form.bsbuttontable', ['url', 'method', 'title', 'attribute']);

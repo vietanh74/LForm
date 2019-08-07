@@ -23,10 +23,4 @@ class LFormController extends Controller
     {
         return redirect()->back()->withCookie(Cookie::make("locale", $lang));
     }
-
-    public function logout()
-    {
-        Auth::logout();
-        return redirect(url("/"));
-    }
 }
