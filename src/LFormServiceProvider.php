@@ -26,7 +26,7 @@ class LFormServiceProvider extends ServiceProvider
         Form::component('materialText', 'layouts.form.materialtext', ['name', 'value', 'title', 'place_holder', 'hin', 'validation', 'attribute']);
         Form::component('materialPassword', 'layouts.form.materialpassword', ['name', 'title', 'forgot', 'place_holder', 'hin', 'validation', 'attribute']);
 
-        
+        Form::component('lbPassword', 'layouts.form.bspassword', ['name', 'value', 'title', 'place_holder', 'hin', 'validation', 'attribute']);
         Form::component('lbText', 'layouts.form.bstext', ['name', 'value', 'title', 'place_holder', 'hin', 'validation', 'attribute']);
         Form::component('lbNumber', 'layouts.form.bsnumber', ['name', 'value', 'title', 'min', 'max', 'attribute']);
         Form::component('lbTimepicker', 'layouts.form.bstimepicker', ['name', 'value', 'title', 'attribute']);
