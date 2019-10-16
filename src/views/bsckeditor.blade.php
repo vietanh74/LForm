@@ -1,13 +1,22 @@
 <div class="form-group">
-    {{ Form::label($name, $title, ['class' => 'control-label']) }}
-    <textarea class="ckeditor" class="editor1" rows="10" cols="80" name="{{ $name }}">
-		{{ @$value }}
-	</textarea>
+  {{ Form::label($name, $title, ['class' => 'control-label']) }}
+  <textarea class="editor1-{{ $name }}" name="{{ $name }}" style="display: none;">
+      {{ @$value }}
+  </textarea>
 </div>
-@section ('ckeditor_script')
-CKEDITOR.inline('editor1');
-$('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
-  checkboxClass: 'icheckbox_minimal-green',
-  radioClass: 'iradio_minimal-green'
-});
-@endsection
+@push('script')
+<script type="text/javascript">
+  ClassicEditor.create(document.querySelector('.editor1-{{ $name }}'), {
+    language: 'vi',
+    ckfinder: {
+      uploadUrl: '/js/plugin/ckeditor5/ckfinder/core/connector/php/connector.php?command=QuickUpload&type=Files&responseType=json'
+    }
+  })
+  .then(editor => {
+    editor.editing.view.change( writer => { writer.setAttribute( 'spellcheck', 'false', editor.editing.view.document.getRoot() ); } );
+  })
+  .catch(error => {
+    console.error( error );
+  });
+</script>
+@endpush
