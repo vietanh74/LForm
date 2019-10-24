@@ -16,7 +16,16 @@
         "psr-4": {
             "VietAnh\\LForm\\": "src/"
         },
-        "classmap": ["src/controllers"]
+        "classmap": [
+            "src/controllers"
+        ]
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "VietAnh\\LForm\\LFormServiceProvider"
+            ]
+        }
     },
     "minimum-stability": "stable"
 }
